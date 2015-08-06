@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Web interface for my TicTacToe game.}
   spec.description   = %q{A single page app for playing tictactoe on the interwebs. (Well, actually there are two pages really.)}
   spec.homepage      = "https://github.com/RadicalZephyr/ttt_web"
+  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "bin"
