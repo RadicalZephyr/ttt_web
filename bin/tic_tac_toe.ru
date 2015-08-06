@@ -1,0 +1,6 @@
+require 'ttt_web'
+
+use Rack::Session::Pool,
+    :expire_after => 1800
+use Rack::Static, :urls => ["/js", "/css", "/images"], :root => "public"
+run TttWeb::RackShell.new_shell

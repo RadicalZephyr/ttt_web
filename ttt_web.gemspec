@@ -19,7 +19,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "tic_tac_toe_gs", "~> 0.1"
+  spec.add_runtime_dependency "rack", "~> 1.6"
+  spec.add_runtime_dependency "mustache", "~> 1.0"
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "3.2.0"
+  spec.add_development_dependency "rack-test", "0.6.3"
+  spec.add_development_dependency "jasmine", "2.3.0"
+  spec.add_development_dependency "guard-rspec", "4.5.0"
+  spec.add_development_dependency "guard-rack", "2.1.1"
+  spec.add_development_dependency "guard-jasmine", "2.0.6"
 end
