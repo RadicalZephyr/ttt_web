@@ -1,6 +1,7 @@
 require 'json'
 
-require 'rack_tac_toe'
+require 'ttt_web'
+require 'tic_tac_toe_gs'
 require 'tic_tac_toe_gs/core/player'
 
 module TttWeb

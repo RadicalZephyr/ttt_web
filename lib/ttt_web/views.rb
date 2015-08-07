@@ -1,3 +1,3 @@
-require 'tic_tac_toe_gs/web/views/home'
-require 'tic_tac_toe_gs/web/views/game'
-require 'tic_tac_toe_gs/web/views/board'
+require 'ttt_web/views/home'
+require 'ttt_web/views/game'
+require 'ttt_web/views/board'
