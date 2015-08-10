@@ -61,8 +61,12 @@ module TttWeb
         req = Rack::Request.new(env)
         game = req.session[:game]
 
-        {:current_mark => game.current_mark.to_s,
-         :marks => game.board.map { |m| m.to_s }.to_a}.to_json
+        unless game.nil?
+          {:current_mark => game.current_mark.to_s,
+           :marks => game.board.map { |m| m.to_s }.to_a}.to_json
+        else
+          {}.to_json
+        end
       end
 
       return shell
