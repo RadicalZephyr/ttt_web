@@ -1,3 +1,5 @@
+require 'rack'
+require 'rack_jax'
 require 'ttt_web'
 
 use Rack::Session::Pool,

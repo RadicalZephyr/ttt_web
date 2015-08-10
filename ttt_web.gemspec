@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "tic_tac_toe_gs", "~> 0.1"
   spec.add_runtime_dependency "rack", "~> 1.6"
   spec.add_runtime_dependency "mustache", "~> 1.0"
+  spec.add_runtime_dependency "rack_jax", "~> 0.0.1"
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
