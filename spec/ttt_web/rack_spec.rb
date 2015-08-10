@@ -42,6 +42,8 @@ describe TttWeb::RackShell do
       expect(last_response).to be_successful
       board_hash = JSON.parse(last_response.body)
       expect(board_hash).to include("current_mark" => "X",
+                                    "finished" => false,
+                                    "who_won" => nil,
                                     "marks" => [" ", " ", " ",
                                                 " ", " ", " ",
                                                 " ", " ", " "])
@@ -51,9 +53,30 @@ describe TttWeb::RackShell do
       get '/api/board'
       board_hash = JSON.parse(last_response.body)
       expect(board_hash).to include("current_mark" => "O",
+                                    "finished" => false,
+                                    "who_won" => nil,
                                     "marks" => [" ", "X", " ",
                                                 " ", " ", " ",
                                                 " ", " ", " "])
+    end
+
+    it 'returns finished when the game is over' do
+      post '/api/new-game', "player1=h&player2=h"
+      post '/api/make-move', "move=0"
+      post '/api/make-move', "move=3"
+      post '/api/make-move', "move=1"
+      post '/api/make-move', "move=4"
+      post '/api/make-move', "move=2"
+      get '/api/board'
+      expect(last_response).to be_successful
+      board_hash = JSON.parse(last_response.body)
+      expect(board_hash).to include("current_mark" => "O",
+                                    "finished"     => true,
+                                    "who_won"      => "X",
+                                    "marks" => ["X", "X", "X",
+                                                "O", "O", " ",
+                                                " ", " ", " "])
+
     end
 
     it 'makes an AI move immediately when the AI goes first' do

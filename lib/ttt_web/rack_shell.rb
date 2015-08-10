@@ -63,7 +63,9 @@ module TttWeb
 
         unless game.nil?
           {:current_mark => game.current_mark.to_s,
-           :marks => game.board.map { |m| m.to_s }.to_a}.to_json
+           :marks => game.board.map { |m| m.to_s }.to_a,
+           :finished => game.finished?,
+           :who_won  => game.who_won?}.to_json
         else
           {}.to_json
         end
