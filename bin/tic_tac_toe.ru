@@ -1,7 +1,5 @@
 #\ -s RackJax -p 5050
 
-require 'rack'
-require 'rack_jax'
 require 'ttt_web'
 
 use Rack::Session::Pool,
