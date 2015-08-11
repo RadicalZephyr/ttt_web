@@ -26,4 +26,14 @@ describe("Display", function() {
         display.show();
         expect(cl.remove).toHaveBeenCalledWith("hidden");
     });
+
+    it("can have the content set", function() {
+        var div = {"innerText"};
+        display = new Display(div);
+        var text = "abcdef";
+
+        display.setContent(text);
+
+        expect(div.innerText).toBe(text);
+    });
 });
